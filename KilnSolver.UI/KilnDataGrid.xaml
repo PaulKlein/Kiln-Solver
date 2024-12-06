@@ -24,10 +24,14 @@
         </ObjectDataProvider>
     </UserControl.Resources>
     <DockPanel LastChildFill="true">
-        <StackPanel DockPanel.Dock="Top">
-            <Button Content="Solve"
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Button Content="Basic Solve"
                     Style="{StaticResource AccentButtonStyle}"
                     Click="GenerateSolve"/>
+            <Button Content="Optimal Solve"
+                    Style="{StaticResource AccentButtonStyle}"
+                    Click="GenerateOptimisedSolve"
+                    Margin="5,0,0,0"/>
         </StackPanel>
         <DataGrid
             x:Name="dataGrid"

@@ -41,7 +41,19 @@ Ware[] wares = [
 
 bool optimise = true;
 
+Console.WriteLine("Solving to fit the following items: ");
+foreach (var ware in wares)
+{
+    Console.WriteLine($"{ware.Name} x{ware.ItemCount} [{ware.AllowedLevel}]");
+}
+
+Console.WriteLine($"Total Items: {wares.Sum(w => w.ItemCount)}");
+
+Console.WriteLine();
+Console.WriteLine();
+
 Console.Write(optimise ? "Optimising..." : "Solving...");
+
 var solution = SolveGenerator.GenerateSolution(wares, levelCapacities, optimise);
 Console.WriteLine("Done");
 
@@ -57,3 +69,4 @@ for (var i = 0; i < solution.Length; i++)
     Console.WriteLine("Level {0}, {2}% Fill - [{1}]", i, string.Join(", ", solution[i].WareCounts.Select(w => $"{w.Ware.Name} x{w.Count}")), solution[i].WareCounts.Sum(w => w.Ware.Size * w.Count));
 }
 Console.WriteLine("*** Bottom of Kiln");
+Console.WriteLine($"Total Items: {solution.Sum(l => l.WareCounts.Sum(w => w.Count))}");

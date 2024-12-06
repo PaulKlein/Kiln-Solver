@@ -13,7 +13,7 @@ namespace KilnSolver.UI
     {
         readonly ObservableCollection<Ware> _data;
 
-        readonly static int[] _levels = [100, 100, 100, 100];
+        static readonly int[] _levels = [100, 100, 100, 100];
 
         public KilnDataGrid()
         {
@@ -26,23 +26,48 @@ namespace KilnSolver.UI
 
         private void GenerateSolve(object sender, RoutedEventArgs e)
         {
-            var solution = SolveGenerator.GenerateSolution(_data.ToArray(), _levels);
-
-            if (solution is null)
+            GenerateSolution(false);
+        }
+        
+        private void GenerateOptimisedSolve(object sender, RoutedEventArgs e)
+        {
+            GenerateSolution(true);
+        }
+        
+        private void GenerateSolution(bool optimise)
+        {
+            try
             {
-                MessageBox.Show("No Solution Found");
-                return;
+                if (_data.Count == 0)
+                {
+                    MessageBox.Show("No Wares added to list");
+                    return;
+                }
+                
+                var solution = SolveGenerator.GenerateSolution(_data.ToArray(), _levels, optimise);
+
+                if (solution is null)
+                {
+                    MessageBox.Show("No Solution Found");
+                    return;
+                }
+
+                var resultBuilder = new StringBuilder();
+
+                resultBuilder.AppendLine("*** Top of Kiln ***");
+                for (var i = 0; i < solution.Length; i++)
+                {
+                    resultBuilder.AppendFormat("Level {0} -[{1}]\n", i,
+                        string.Join(", ", solution[i].WareCounts.Select(w => $"{w.Ware.Name} x{w.Count}")));
+                }
+
+                resultBuilder.AppendLine("*** Bottom of Kiln ***");
+                MessageBox.Show(resultBuilder.ToString());
             }
-
-            var resultBuilder = new StringBuilder();
-
-            resultBuilder.AppendLine("*** Top of Kiln ***");
-            for (var i = 0; i < solution.Length; i++)
+            catch (Exception ex)
             {
-                resultBuilder.AppendFormat("Level {0} -[{1}]\n", i, string.Join(", ", solution[i].WareCounts.Select(w => $"{w.WareName} x{w.Count}")));
+                MessageBox.Show($"Whoops, something went wrong. Tell Paul :(\n\nDetails:\n{ex}");
             }
-            resultBuilder.AppendLine("*** Bottom of Kiln ***");
-            MessageBox.Show(resultBuilder.ToString());
         }
     }
 }
