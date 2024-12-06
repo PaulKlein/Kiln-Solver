@@ -43,8 +43,10 @@ namespace KilnSolver.UI
                     MessageBox.Show("No Wares added to list");
                     return;
                 }
+
+                var input = _data.ToArray();
                 
-                var solution = SolveGenerator.GenerateSolution(_data.ToArray(), _levels, optimise);
+                var solution = SolveGenerator.GenerateSolution(input, _levels, optimise);
 
                 if (solution is null)
                 {
@@ -52,17 +54,8 @@ namespace KilnSolver.UI
                     return;
                 }
 
-                var resultBuilder = new StringBuilder();
-
-                resultBuilder.AppendLine("*** Top of Kiln ***");
-                for (var i = 0; i < solution.Length; i++)
-                {
-                    resultBuilder.AppendFormat("Level {0} -[{1}]\n", i,
-                        string.Join(", ", solution[i].WareCounts.Select(w => $"{w.Ware.Name} x{w.Count}")));
-                }
-
-                resultBuilder.AppendLine("*** Bottom of Kiln ***");
-                MessageBox.Show(resultBuilder.ToString());
+                var resultWindow = new KilnSolutionWindow(input, solution);
+                resultWindow.ShowDialog();
             }
             catch (Exception ex)
             {
