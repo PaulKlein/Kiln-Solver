@@ -26,11 +26,25 @@
     <DockPanel LastChildFill="true">
         <ui:SimpleStackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="5" Spacing="5">
             <Button Content="Basic Solve"
+                    ToolTip="Generate a simple solution that satisfies all rules"
                     Style="{StaticResource AccentButtonStyle}"
                     Click="GenerateSolve"/>
             <Button Content="Optimal Solve"
+                    ToolTip="Generate a solution that distributes items evenly across the kiln"
                     Style="{StaticResource AccentButtonStyle}"
                     Click="GenerateOptimisedSolve"/>
+            <Button Content="Save"
+                    ToolTip="Save Current Wares"
+                    Style="{StaticResource DefaultButtonStyle}"
+                    Click="Save"/>
+            <Button Content="Load"
+                    ToolTip="Load wares from file"
+                    Style="{StaticResource DefaultButtonStyle}"
+                    Click="Load"/>
+            <Button Content="Clear"
+                    ToolTip="Clear all Ware items"
+                    Style="{StaticResource DefaultButtonStyle}"
+                    Click="Clear"/>
         </ui:SimpleStackPanel>
         <DataGrid
             x:Name="dataGrid"

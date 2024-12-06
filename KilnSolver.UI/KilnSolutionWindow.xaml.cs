@@ -60,7 +60,7 @@ public partial class KilnSolutionWindow : Window
         
         ResultDocument.Blocks.Add(new Paragraph(new Bold(new Run("Input") { FontSize = 16 })));
         var inputList = new List();
-        foreach (var ware in _wares)
+        foreach (var ware in _wares.Where(w => w.ItemCount > 0))
             inputList.ListItems.Add(new ListItem(new Paragraph(new Italic(new Run($"{ware.ItemCount}x {ware.Name}")))));
 
         ResultDocument.Blocks.Add(inputList);

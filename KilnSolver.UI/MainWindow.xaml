@@ -17,6 +17,6 @@
         <TextBlock Text="Rosie's Kiln Helper"
                    Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Stretch"/>
         </DockPanel>
-        <local:KilnDataGrid/>
+        <local:KilnDataGrid x:Name="KilnDataGrid"/>
     </ui:SimpleStackPanel>
 </Window>
