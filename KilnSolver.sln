@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KilnSolver.Console", "KilnSolver.Console\KilnSolver.Console.csproj", "{73ED79FE-AC1E-498D-B48C-9CA5505BBDDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KilnSolver.Core", "KilnSolver.Core\KilnSolver.Core.csproj", "{AEEA2001-38BA-4914-ABEA-675224865A12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KilnSolver.UI", "KilnSolver.UI\KilnSolver.UI.csproj", "{7EABFC71-1234-45DD-B7F1-3DAF9BF13DB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73ED79FE-AC1E-498D-B48C-9CA5505BBDDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73ED79FE-AC1E-498D-B48C-9CA5505BBDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73ED79FE-AC1E-498D-B48C-9CA5505BBDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73ED79FE-AC1E-498D-B48C-9CA5505BBDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEEA2001-38BA-4914-ABEA-675224865A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEEA2001-38BA-4914-ABEA-675224865A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEEA2001-38BA-4914-ABEA-675224865A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEEA2001-38BA-4914-ABEA-675224865A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EABFC71-1234-45DD-B7F1-3DAF9BF13DB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EABFC71-1234-45DD-B7F1-3DAF9BF13DB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EABFC71-1234-45DD-B7F1-3DAF9BF13DB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EABFC71-1234-45DD-B7F1-3DAF9BF13DB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
