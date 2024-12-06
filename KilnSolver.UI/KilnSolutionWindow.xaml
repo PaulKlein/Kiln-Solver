@@ -14,8 +14,8 @@
                     Style="{StaticResource AccentButtonStyle}"
                     Click="Print"/>
         </ui:SimpleStackPanel>
-        <FlowDocumentReader>
+        <FlowDocumentScrollViewer>
             <FlowDocument x:Name="ResultDocument" />
-        </FlowDocumentReader>
+        </FlowDocumentScrollViewer>
     </DockPanel>
 </Window>

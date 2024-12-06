@@ -69,7 +69,7 @@
                 <DataGridComboBoxColumn
                     Header="Allowed Levels"
                     Width="200"
-                    SelectedItemBinding="{Binding AllowedLevels}"
+                    SelectedItemBinding="{Binding AllowedLevel}"
                     ItemsSource="{Binding Source={StaticResource AllowedLevelsEnum}}"/>
                 <DataGridTextColumn
                     Header="Count"

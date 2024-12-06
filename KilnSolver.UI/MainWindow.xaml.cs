@@ -15,7 +15,8 @@ public partial class MainWindow : Window
 
     protected override void OnClosing(CancelEventArgs e)
     {
-        KilnDataGrid.WriteAutoSaveFile();
+        Task.Run(() => KilnDataGrid.WriteAutoSaveFileAsync())
+            .ConfigureAwait(false).GetAwaiter().GetResult();
         base.OnClosing(e);
     }
 }

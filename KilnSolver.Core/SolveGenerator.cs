@@ -44,7 +44,7 @@ public static class SolveGenerator
 
             var fillRateOfLevel = waresInLevel.Aggregate(Zen.Plus);
                 
-            constraints.Add( fillRateOfLevel < 100 );
+            constraints.Add( fillRateOfLevel <= 100 );
             fillRates.Add(fillRateOfLevel);
         }
             
