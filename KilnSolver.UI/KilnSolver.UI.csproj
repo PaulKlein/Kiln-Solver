@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Kiln_Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,5 +15,9 @@
 
 <ItemGroup>
 <ProjectReference Include="../KilnSolver.Core/KilnSolver.Core.csproj" />
+</ItemGroup>
+
+<ItemGroup>
+  <Resource Include="Kiln_Icon.ico" />
 </ItemGroup>
 </Project>

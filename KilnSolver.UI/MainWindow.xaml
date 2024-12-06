@@ -8,12 +8,15 @@
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
         Title="Rosie's Kiln Helper"
-        WindowState="Maximized">
+        WindowState="Maximized"
+        Icon="./Kiln_Icon.ico">
     <ui:SimpleStackPanel Margin="12"
                          Spacing="24">
+        <DockPanel LastChildFill="True">
+            <Image Source="./Kiln_Icon.ico" HorizontalAlignment="Right" Height="64" DockPanel.Dock="Right" />
         <TextBlock Text="Rosie's Kiln Helper"
-                   Style="{StaticResource HeaderTextBlockStyle}"/>
-
+                   Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Stretch"/>
+        </DockPanel>
         <local:KilnDataGrid/>
     </ui:SimpleStackPanel>
 </Window>
